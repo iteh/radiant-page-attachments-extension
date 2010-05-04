@@ -97,9 +97,7 @@ Before you start make sure you have `page_attachments` working using your hard d
 2. `cd /path/to/radiant`
 3. `cp vendor/plugins/attachment_fu/amazon_s3.yml.tpl config/amazon_s3.yml`
 4. edit `config/amazon_s3.yml` with your S3 credentials
-5. `cp vendor/extensions/page_attachments/app/models/page_attachment.rb vendor/extensions/page_attachments/app/models/page_attachment.rb.bak`
-6. edit line 2 of `vendor/extensions/page_attachments/app/models/page_attachment.rb` changing `:file_system` to `:s3`
-7. restart your server
+5. restart your server
 
 Add an attachment and make sure the link it gives back is on S3. You should see all your attachments start showing up at `http://s3.amazonaws.com/bucket-name/page_attachments/`. While it is possible to customize the URL to Amazon (i.e. http://attachments.your-domain.com/) but it's beyond the scope of this document and a task best left for those that really need custom URLs.
 
