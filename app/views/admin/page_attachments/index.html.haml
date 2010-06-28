@@ -20,8 +20,8 @@
             %td= link_to page.title, edit_admin_page_url(page), :title => page.url
             %td
               = sample_attachment_code(attachment)
-    = will_paginate @attachments
+    = pagination_for @attachments
 
     #switch_layout
       %p
-        = link_to('Grid View', admin_page_attachments_grid_path(:p => @pagination_parameters[:page]))
+        = link_to('Grid View', admin_page_attachments_grid_path)
