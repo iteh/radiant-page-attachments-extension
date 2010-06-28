@@ -22,7 +22,7 @@ Event.addBehavior({
     } else if (target.match('img[alt=delete]')) {
       var attachment = event.findElement('.attachment');
       attachment.addClassName('deleted');
-      attachment.down('input[name*="_delete"]').setValue('true');
+      attachment.down('input[name*="_destroy"]').setValue('true');
       attachment.insert('<em class="removal_message">Attachment will be deleted when page is saved.</em>');
       attachment.insert(' <strong class="undelete">Undo&hellip;</strong>')
     } else if (target.match('.undelete')) {
@@ -30,7 +30,7 @@ Event.addBehavior({
       attachment.removeClassName('deleted');
       attachment.down('.undelete').remove();
       attachment.down('.removal_message').remove();
-      attachment.down('input[name*="_delete"]').setValue('false');
+      attachment.down('input[name*="_destroy"]').setValue('false');
     }
   }
 
