@@ -124,8 +124,9 @@ module PageAttachmentTags
     size = tag.attr['size'] || nil
     raise TagError, "attachment is not an image." unless attachment.content_type.strip =~ /^image\//
     filename = attachment.public_filename(size) rescue ""
+    alt_text = attachment.description
     attributes = tag.attr.inject([]){ |a,(k,v)| a << %{#{k}="#{v}"} }.join(" ").strip
-    %{<img src="#{filename}" #{attributes + " " unless attributes.empty?}/>}
+    %{<img src="#{filename}" alt="#{alt_text}" #{attributes + " " unless attributes.empty?}/>}
   end
 
   desc %{
