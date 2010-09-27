@@ -10,7 +10,8 @@
               = attachment.short_title.blank? ? attachment.short_filename(20) : attachment.short_title(20)
               %span= link_to '(edit)', edit_admin_page_attachment_path(attachment)
             %span
-              = link_to image_tag(preview_path(attachment)), attachment.public_filename
+              %a{ :href => attachment.public_filename }
+                %img{ :src => attachment.public_filename("grid"), :alt => attachment.description }
             %div
               %p copy/paste:
               = sample_attachment_code(attachment)
