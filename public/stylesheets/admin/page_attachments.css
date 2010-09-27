@@ -203,12 +203,8 @@ li.clearfix {
 
 #grid div span {
   display: block;
-  height: 100px;
-}
-
-#grid div span img {
-  max-height: 100px;
-  width: 100px;
+  height: 205px;
+  text-align: center;
 }
 
 #grid div p {
