@@ -2,6 +2,17 @@ namespace :radiant do
   namespace :extensions do
     namespace :page_attachments do
 
+      desc "Install the Page Attachments extension"
+      task :install => [:environment, :migrate, :update]
+
+      desc "Uninstall the Page Attachments extension"
+      task :uninstall => :environment do
+        require 'radiant/extension_migrator'
+        PageAttachmentsExtension.migrator.migrate(0)
+        asset_dirs = ["images", "javascripts", "stylesheets"]
+        asset_dirs.each { |d| rm_r RAILS_ROOT + "/public/" + d + "/extensions/page_attachments" }
+      end
+
       desc "Runs the migration of the Page Attachments extension"
       task :migrate => :environment do
         require 'radiant/extension_migrator'
