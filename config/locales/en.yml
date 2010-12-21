@@ -1,0 +1,27 @@
+---
+en:
+  page_attachments:
+    pages:
+      copy_paste: "copy/paste:"
+      drag_order_handle: "Drag handle"
+      drag_to_change: "Drag to change order"
+      delete: "delete"
+      view: "(view)"
+      attachments: "Attachments"
+    edit:
+      title: "Title"
+      description: "Description"
+      attached_to_page: "Attached to Page:"
+      button_save: "Save"
+    grid:
+      edit: "(edit)"
+      copy_paste: "copy/paste:"
+      list_view: "List view"
+    index:
+      grid_view: "Grid View"
+      image: "Image"
+      description: "Description"
+      page: "Page"
+      copy_paste: "Copy/Paste"
+      view: "(view)"
+      edit_this_image: "Edit this image"

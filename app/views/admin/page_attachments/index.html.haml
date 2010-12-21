@@ -4,18 +4,18 @@
   .outset
     %table.index
       %tr
-        %th Image
-        %th Description
-        %th Page
-        %th Copy/Paste
+        %th = t('page_attachments.index.image')
+        %th = t('page_attachments.index.description')
+        %th = t('page_attachments.index.page')
+        %th = t('page_attachments.index.copy_paste')
       - unless @attachments.blank?
         - @attachments.each do |attachment|
           - page = attachment.page
           %tr
             %td
               - link_text = attachment.title.blank? ? attachment.filename : attachment.title
-              = link_to(link_text, edit_admin_page_attachment_path(attachment), :title => 'Edit this image')
-              = link_to("(view)", attachment.public_filename, :title => attachment.filename)
+              = link_to(link_text, edit_admin_page_attachment_path(attachment), :title => t('page_attachments.index.edit_this_image'))
+              = link_to(t('page_attachments.index.view'), attachment.public_filename, :title => attachment.filename)
             %td= attachment.description
             %td= link_to page.title, edit_admin_page_url(page), :title => page.url
             %td
@@ -24,4 +24,4 @@
 
     #switch_layout
       %p
-        = link_to('Grid View', admin_page_attachments_grid_path)
+        = link_to(t('page_attachments.index.grid_view'), admin_page_attachments_grid_path)

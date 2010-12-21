@@ -1,0 +1,27 @@
+---
+de:
+  page_attachments:
+    pages:
+      copy_paste: "Radius Tag:"
+      drag_order_handle: "Verschieben"
+      drag_to_change: "Reihenfolge mit verschieben ändern"
+      delete: "löschen"
+      view: "(anszeigen)"
+      attachments: "Anhang"
+    edit:
+      title: "Titel"
+      description: "Beschreibung"
+      attached_to_page: "folgender Seite zugeordnet:"
+      button_save: "Speichern"
+    grid:
+      edit: "(bearbeiten)"
+      copy_paste: "Radius Tag:"
+      list_view: "als Liste anzeigen"
+    index:
+      grid_view: "als Bild Raster anzeigen"
+      image: "Bild"
+      description: "Beschreibung"
+      page: "Seite"
+      copy_paste: "Radius Tag"
+      view: "(anzeigen)"
+      edit_this_image: "Dieses Bild bearbeiten"

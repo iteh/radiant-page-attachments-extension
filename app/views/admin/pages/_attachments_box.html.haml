@@ -7,7 +7,8 @@
     = image_tag('admin/plus.png', :alt => 'add')
     = hidden_field_tag('attachment_index', @page.attachments.size, :id => 'attachment_index_field')
   %h3
-    Attachments (
+    = t('page_attachments.pages.attachments')
+    (
     %span#attachment_count>= @page.attachments.count
     )
   - unless @page.attachments.count.zero?

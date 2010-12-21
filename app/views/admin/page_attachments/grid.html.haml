@@ -8,15 +8,15 @@
           %div
             %h2
               = attachment.short_title.blank? ? attachment.short_filename(20) : attachment.short_title(20)
-              %span= link_to '(edit)', edit_admin_page_attachment_path(attachment)
+              %span= link_to t('page_attachments.grid.edit'), edit_admin_page_attachment_path(attachment)
             %span
               %a{ :href => attachment.public_filename }
                 %img{ :src => attachment.public_filename("grid"), :alt => attachment.description }
             %div
-              %p copy/paste:
+              %p = t('page_attachments.grid.copy_paste')
               = sample_attachment_code(attachment)
     = pagination_for @attachments
 
   #switch_layout
     %p
-      = link_to('List view', admin_page_attachments_path)
+      = link_to(t('page_attachments.grid.list_view'), admin_page_attachments_path)

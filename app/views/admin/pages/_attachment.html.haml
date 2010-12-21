@@ -3,14 +3,14 @@
   = hidden_field_tag "page[attachments_attributes][#{attachment_counter}][_destroy]", "0"
   = hidden_field_tag "page[attachments_attributes][#{attachment_counter}][position]", attachment.position
   - unless attachment.first? && attachment.last?
-    = image_tag 'extensions/page_attachments/drag_order.png', :alt => "Drag handle", :title => "Drag to change order", :class => 'drag_order'
-  .attachment_remover= image_tag "admin/minus.png", :alt => "delete", :class => 'delete'
+    = image_tag 'extensions/page_attachments/drag_order.png', :alt => t('page_attachments.pages.drag_order_handle'), :title => t('page_attachments.pages.drag_to_change'), :class => 'drag_order'
+  .attachment_remover= image_tag "admin/minus.png", :alt => t('page_attachments.pages.delete'), :class => 'delete'
   - unless attachment.thumbnails.empty?
     = link_to image_tag(attachment.public_filename("icon")),  attachment.public_filename, :class => 'thumbnail'
   .sample_attachment_code
-    copy/paste:
+    = t('page_attachments.pages.copy_paste')
     = sample_attachment_code(attachment)
   %p
     = link_to attachment.filename, edit_admin_page_attachment_path(attachment)
-    = link_to '(view)', attachment.public_filename
+    = link_to t('page_attachments.pages.view'), attachment.public_filename
   = attachment.title

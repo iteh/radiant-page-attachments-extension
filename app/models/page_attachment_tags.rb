@@ -103,7 +103,7 @@ module PageAttachmentTags
     page = tag.locals.page
     attachment = tag.locals.attachment || page.attachment(name)
     format = tag.attr['format'] || "%F"
-    attachment.created_at.strftime(format)
+    i18n.l attachment.created_at, :format => format
   end
 
   desc %{
@@ -124,9 +124,13 @@ module PageAttachmentTags
     size = tag.attr['size'] || nil
     raise TagError, "attachment is not an image." unless attachment.content_type.strip =~ /^image\//
     filename = attachment.public_filename(size) rescue ""
-    alt_text = attachment.description
+    tag.attr['alt'] = attachment.description unless tag.attr['alt']
+    tag.attr['title'] = attachment.title unless tag.attr['title']
+    tag.attr['height'] = attachment.height unless tag.attr['height']
+    tag.attr['width'] = attachment.width unless tag.attr['width']
+
     attributes = tag.attr.inject([]){ |a,(k,v)| a << %{#{k}="#{v}"} }.join(" ").strip
-    %{<img src="#{filename}" alt="#{alt_text}" #{attributes + " " unless attributes.empty?}/>}
+    %{<img src="#{filename}" #{attributes + " " unless attributes.empty?}/>}
   end
 
   desc %{

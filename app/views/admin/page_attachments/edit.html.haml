@@ -2,19 +2,19 @@
 - form_for :page_attachment, @page_attachment, :url => admin_page_attachment_path(@page_attachment), :html => {:method => :put, :multipart => true} do |form|
   .form-area
     %p.title
-      = form.label :title
+      = form.label :title, t('page_attachments.edit.title')
       = form.text_field :title, :class => 'textbox', :maxlength => 255
     %p.title
-      = form.label :description
+      = form.label :description, t('page_attachments.edit.description')
       = form.text_field :description, :class => 'textbox', :maxlength => 255
     %p
-      Attached to Page:
+      = t('page_attachments.edit.attached_to_page')
       - page = @page_attachment.page
       = link_to page.title, edit_admin_page_path(page)
   %p.buttons
-    = form.submit "Save"
-    or
-    = link_to 'Cancel', admin_page_attachments_url
+    = form.submit t('page_attachments.edit.button_save')
+    = t('or')
+    = link_to t('cancel'), admin_page_attachments_url
   %p
     - if @page_attachment.filename.match(/(jpg|gif|png|jpeg)$/)
       = image_tag(@page_attachment.public_filename)
