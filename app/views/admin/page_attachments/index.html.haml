@@ -4,10 +4,14 @@
   .outset
     %table.index
       %tr
-        %th = t('page_attachments.index.image')
-        %th = t('page_attachments.index.description')
-        %th = t('page_attachments.index.page')
-        %th = t('page_attachments.index.copy_paste')
+        %th
+          = t('page_attachments.index.image')
+        %th
+          = t('page_attachments.index.description')
+        %th
+          = t('page_attachments.index.page')
+        %th
+          = t('page_attachments.index.copy_paste')
       - unless @attachments.blank?
         - @attachments.each do |attachment|
           - page = attachment.page
@@ -24,4 +28,5 @@
 
     #switch_layout
       %p
+        = link_to(t('page_attachments.index.generate'), admin_page_attachments_generate_path)
         = link_to(t('page_attachments.index.grid_view'), admin_page_attachments_grid_path)

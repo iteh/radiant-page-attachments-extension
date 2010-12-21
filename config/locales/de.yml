@@ -1,6 +1,7 @@
 ---
 de:
   page_attachments:
+    menuitem: "Anhänge"
     pages:
       copy_paste: "Radius Tag:"
       drag_order_handle: "Verschieben"
@@ -9,6 +10,7 @@ de:
       view: "(anszeigen)"
       attachments: "Anhang"
     edit:
+      heading: "Seiten Anhang bearbeiten"
       title: "Titel"
       description: "Beschreibung"
       attached_to_page: "folgender Seite zugeordnet:"
@@ -25,3 +27,4 @@ de:
       copy_paste: "Radius Tag"
       view: "(anzeigen)"
       edit_this_image: "Dieses Bild bearbeiten"
+      generate: "Alle Bildergrössen neu berechnen"

@@ -1,4 +1,5 @@
-%h1 Edit Page Attachment
+%h1
+  = t('page_attachments.edit.heading')
 - form_for :page_attachment, @page_attachment, :url => admin_page_attachment_path(@page_attachment), :html => {:method => :put, :multipart => true} do |form|
   .form-area
     %p.title

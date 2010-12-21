@@ -1,6 +1,7 @@
 ---
 en:
   page_attachments:
+    menuitem: "Attachments"
     pages:
       copy_paste: "copy/paste:"
       drag_order_handle: "Drag handle"
@@ -9,6 +10,7 @@ en:
       view: "(view)"
       attachments: "Attachments"
     edit:
+      heading: "Edit Page Attachment"
       title: "Title"
       description: "Description"
       attached_to_page: "Attached to Page:"
@@ -25,3 +27,4 @@ en:
       copy_paste: "Copy/Paste"
       view: "(view)"
       edit_this_image: "Edit this image"
+      generate: "generate sizes"
