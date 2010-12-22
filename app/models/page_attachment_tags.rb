@@ -137,9 +137,7 @@ module PageAttachmentTags
       full_filename = attachment.public_filename() rescue ""
 
       %{<a href="#{full_filename}" onclick="return hs.expand(this)" class="highslide"><img src="#{filename}" #{attributes + " " unless attributes.empty?}/></a>
-    	<div class="highslide-caption">
-    	#{attachment.description}
-	</div>
+    	<div class="highslide-caption">#{attachment.description}</div>
       }
     else
       %{<img src="#{filename}" #{attributes + " " unless attributes.empty?}/>}    
