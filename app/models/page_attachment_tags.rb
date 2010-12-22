@@ -114,7 +114,7 @@ module PageAttachmentTags
 
     *Usage*:
 
-    <pre><code><r:attachment:image name="file.jpg" [size="icon"]/></code></pre>
+    <pre><code><r:attachment:image name="file.jpg" [size="icon"] [highslide="true"]/></code></pre>
 
     }
   tag "attachment:image" do |tag|
@@ -122,15 +122,28 @@ module PageAttachmentTags
     page = tag.locals.page
     attachment = tag.locals.attachment || page.attachment(name)
     size = tag.attr['size'] || nil
+    highslide = tag.attr['highslide'] || 'true'
+
     raise TagError, "attachment is not an image." unless attachment.content_type.strip =~ /^image\//
     filename = attachment.public_filename(size) rescue ""
     tag.attr['alt'] = attachment.description unless tag.attr['alt']
     tag.attr['title'] = attachment.title unless tag.attr['title']
     tag.attr['height'] = attachment.height unless tag.attr['height']
     tag.attr['width'] = attachment.width unless tag.attr['width']
+    tag.attr['rel'] = "tipsy"
 
     attributes = tag.attr.inject([]){ |a,(k,v)| a << %{#{k}="#{v}"} }.join(" ").strip
-    %{<img src="#{filename}" #{attributes + " " unless attributes.empty?}/>}
+    if (highslide.eql?('true'))
+      full_filename = attachment.public_filename() rescue ""
+
+      %{<a href="#{full_filename}" onclick="return hs.expand(this)" class="highslide"><img src="#{filename}" #{attributes + " " unless attributes.empty?}/></a>
+    	<div class="highslide-caption">
+    	#{attachment.description}
+	</div>
+      }
+    else
+      %{<img src="#{filename}" #{attributes + " " unless attributes.empty?}/>}    
+    end
   end
 
   desc %{
