@@ -7,7 +7,7 @@ de:
       drag_order_handle: "Verschieben"
       drag_to_change: "Reihenfolge mit verschieben ändern"
       delete: "löschen"
-      view: "(anszeigen)"
+      view: "(anzeigen)"
       attachments: "Anhang"
     edit:
       heading: "Seiten Anhang bearbeiten"

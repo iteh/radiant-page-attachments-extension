@@ -19,7 +19,7 @@ Event.addBehavior({
     } else if (target.match('img[alt=cancel]')) {
       event.findElement('.attachment_upload').remove();
       event.stop();
-    } else if (target.match('img[alt=delete]')) {
+    } else if (target.match('img[rel=delete]')) {
       var attachment = event.findElement('.attachment');
       attachment.addClassName('deleted');
       attachment.down('input[name*="_destroy"]').setValue('true');
